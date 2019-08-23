@@ -24,8 +24,11 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """function will recieve the count param and when less then 10 it will return the numeral, other wise it will return "many" """
+    if count >= 10:
+        return("Number of donuts: many")
+    else:
+        return("Number of donuts: " + str(count))
 
 
 # B. both_ends
@@ -35,7 +38,9 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) < 2:
+        return ''
+    return s[0:2] + s[-2:]
 
 
 # C. fix_start
@@ -49,7 +54,12 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    char = s[0]
+    length = len(s)
+    s = s.replace(char, '*')
+    s = char + s[1:]
+
+    return s
 
 
 # D. MixUp
@@ -61,7 +71,10 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
     """Your code goes here.  Edit this docstring."""
-    return
+    new_a = b[:2] + a[2:]
+    new_b = a[:2] + b[2:]
+
+    return new_a + ' ' + new_b
 
 
 # Provided simple test() function used in main() to print
